@@ -1,0 +1,23 @@
+.caja1 {
+  border-top: 3px solid black; /* Borde superior sólido */
+  border-right: 3px dashed red; /* Borde derecho discontinuo */
+  border-bottom: 3px dotted blue; /* Borde inferior punteado */
+  border-left: 3px double green; /* Borde izquierdo doble */
+  margin-bottom: 10px; /* Espacio entre cajas */
+}
+
+.caja2 {
+  border-top: 2px dotted red; /* Borde superior punteado */
+  border-right: 2px double blue; /* Borde derecho doble */
+  border-bottom: 2px dashed green; /* Borde inferior discontinuo */
+  border-left: 2px solid black; /* Borde izquierdo sólido */
+  margin-bottom: 10px; /* Espacio entre cajas */
+}
+
+.caja3 {
+  border-top: 4px double green; /* Borde superior doble */
+  border-right: 4px solid red; /* Borde derecho sólido */
+  border-bottom: 4px dashed blue; /* Borde inferior discontinuo */
+  border-left: 4px dotted black; /* Borde izquierdo punteado */
+  margin-bottom: 10px; /* Espacio entre cajas */
+}
