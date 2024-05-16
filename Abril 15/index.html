@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesion 25</title>
+</head>
+<body>
+    <button onclick="crearParrafos()">Crear Párrafos</button>
+    <button onclick="colorearAzul()">Pintar Azul</button>
+    <button onclick="colorearCafe()">Pintar Café</button>
+    <button onclick="colorearNaranja()">Pintar Naranja</button>
+    <button onclick="cambiarFuente()">Cambiar fuente</button>
+    <button onclick="aumentarTamano()">+</button>
+    <button onclick="reducirTamano()">-</button>
+    <div id="receptor" ></div>
+    <script>
+        function crearParrafos(){
+            let responsableParrafos = document.getElementById("receptor");
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.setAttribute("class","colorP");
+            nuevoParrafo.innerHTML = 'Texto Demostrativo';
+            responsableParrafos.appendChild(nuevoParrafo);
+        }
+        function colorearAzul(){
+            let todosParrafos = document.getElementsByClassName("colorP");
+            for(let contador=0;contador<todosParrafos.length;contador++){
+                todosParrafos[contador].style.color="blue";
+            }
+        }
+        function colorearCafe(){
+            let todosParrafos = document.getElementsByClassName("colorP");
+            for(let contador=0;contador<todosParrafos.length;contador++){
+                todosParrafos[contador].style.color="brown";
+            }
+        }
+        function colorearNaranja(){
+            let todosParrafos = document.getElementsByClassName("colorP");
+            for(let contador=0;contador<todosParrafos.length;contador++){
+                todosParrafos[contador].style.color="orange";
+            }
+        }
+        function cambiarFuente(){
+            let todosParrafos = document.getElementsByClassName("colorP");
+            for(let contador=0;contador<todosParrafos.length;contador++){
+                todosParrafos[contador].style.fontFamily="Segoe UI Light";
+            }
+        } 
+        function aumentarTamano() {
+            let todosParrafos = document.getElementsByClassName("colorP");
+            for (let contador = 0; contador < todosParrafos.length; contador++) {
+            let currentFontSize = parseFloat(window.getComputedStyle(todosParrafos[contador]).fontSize);
+             let newFontSize = currentFontSize * 1.2; // Increase font size by 20%
+            todosParrafos[contador].style.fontSize = newFontSize + "px";
+            }
+        }
+        function reducirTamano() {
+            let todosParrafos = document.getElementsByClassName("colorP");
+            for (let contador = 0; contador < todosParrafos.length; contador++) {
+            let currentFontSize = parseFloat(window.getComputedStyle(todosParrafos[contador]).fontSize);
+            let newFontSize = currentFontSize * 0.8; // Decrease font size by 20%
+            todosParrafos[contador].style.fontSize = newFontSize + "px";
+            }
+        }                 
+    </script>
+</body>
+</html>

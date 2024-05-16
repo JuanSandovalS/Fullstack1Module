@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Venta de Almuerzos</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function realizarCompra() {
+    var dinero = parseFloat(document.getElementById('dinero').value);
+    var precio = parseFloat(document.getElementById('almuerzo').value);
+    var mensaje = document.getElementById('mensaje');
+
+    if (dinero >= precio) {
+        var cambio = dinero - precio;
+        mensaje.innerHTML = "COMPRA REALIZADA CON ÉXITO, VUELTO Q. " + cambio.toFixed(2);
+        mensaje.style.color = 'black';
+        document.getElementById('dinero').value = cambio.toFixed(2);
+    } else {
+        mensaje.innerHTML = "COMPRA NO REALIZADA";
+        mensaje.style.color = 'red';
+    }
+}
+</script>
+</head>
+<body>
+<h1>Compra tu Almuerzo</h1>
+<label for="dinero">Dinero: Q</label>
+<input type="number" id="dinero" step="0.01" placeholder="Ingrese su dinero">
+<br><br>
+<label for="almuerzo">Seleccione Almuerzo:</label>
+<select id="almuerzo">
+    <option value="25.00">Carne asada – Q. 25.00</option>
+    <option value="20.00">Pollo en Crema – Q. 20.00</option>
+    <option value="50.00">Arroz de Lomito – Q. 50.00</option>
+</select>
+<br><br>
+<button onclick="realizarCompra()">Comprar</button>
+<h2 id="mensaje"></h2>
+</body>
+</html>
