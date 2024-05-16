@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar - Ocultar Texto</title>
+</head>
+<body>
+    <a onclick="mostrartextos()" href="#">Mostrar Texto</a>
+    <h1 id="tituloprincipal">Bienvenido Juan</h1>
+    <h1 id="titulosecundario">Es un gusto Saludarlo</h1>
+
+    <a onclick="ocultartextos()" href="#">Ocultar Textos</a>
+</body>
+<script>
+    document.getElementById("tituloprincipal").style.display="none"
+    document.getElementById("titulosecundario").style.display="none"
+
+    function mostrartextos(){
+        document.getElementById("tituloprincipal").style.display="block"
+        document.getElementById("titulosecundario").style.display="block"
+    }
+
+    function ocultartextos(){
+        document.getElementById("tituloprincipal").style.display="none"
+        document.getElementById("titulosecundario").style.display="none"
+    }
+</script>
+</html>

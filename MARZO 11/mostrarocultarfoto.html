@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="copia.css">
+    <title>Document</title>
+</head>
+<body>
+    <a class="btn" onclick="mostrarIMG()" href="#">Mostrar Imagen</a>
+    <img class="ctrimg" id="imguno" src="img copi/noticia1.jpeg" alt="">
+    <img class="ctrimg" id="imgdos" src="img copi/noticia2.jpeg" alt="">
+    <img class="ctrimg" id="imgtres" src="img copi/noticia3.jpg" alt="">
+    <a class="btn" onclick="ocultarIMG()" href="#">Ocultar Imagen</a>
+</body>
+<script>
+    document.getElementById("imguno").style.display="none"
+    document.getElementById("imgdos").style.display="none"
+    document.getElementById("imgtres").style.display="none"
+    function mostrarIMG(){
+        document.getElementById("imguno").style.display="block"
+        document.getElementById("imgdos").style.display="block"
+        document.getElementById("imgtres").style.display="block"
+    }
+    function ocultarIMG(){
+        document.getElementById("imguno").style.display="none"
+        document.getElementById("imgdos").style.display="none"
+        document.getElementById("imgtres").style.display="none"
+    }
+</script>
+</html>
