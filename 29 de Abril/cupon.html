@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generarcodigocupon()">Generar cupon</button>
+    <div id="listadocupones">
+
+    </div>
+    <script>
+        function generarcodigocupon(){
+        var listadoletrasnumeros = "abcdefghijklmnopqrstuvwxyz0123456789"; //estas letras y numeros seran el listado de nuestro cupon
+        var cuponcreado = " ";
+
+        for (let i = 0; i < 8; i++){
+            var tomarcaracter = Math.floor(Math.random()*listadoletrasnumeros.length)
+            //.lenght nos devuelve el conteo total de elementos 
+            //Math.random() nos devuelve numero aleatorio
+            //Math.floor convierte a entero si hay decimales 
+            cuponcreado += listadoletrasnumeros.charAt(tomarcaracter)//obtiene de una cadena de texto(listaletrasnumeros) dada la posicion 
+            //la letra F dentro de nuestro alfabeto es la posicion 5, si el aleatorio fuese 5 nos devolvera una F 
+        } 
+        var textocupon = document.createElement('h2')
+        textocupon.innerHTML = cuponcreado
+        document.getElementById('listadocupones').appendChild(textocupon)
+
+    }
+    </script>
+</body>
+</html>
