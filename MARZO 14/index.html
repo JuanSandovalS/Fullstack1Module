@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="imagenAmplia">
+        <img id="img1" class="imgAmplia" src="img/IMG_20200318_095142.jpg" alt="">
+        <img id="img2" class="imgAmplia" src="img/IMG_20200119_182548.jpg" alt="">
+        <img id="img3" class="imgAmplia" src="img/IMG_20200212_194842.jpg" alt="">
+        <img id="img4" class="imgAmplia" src="img/IMG_20200212_192655.jpg" alt="">
+    </div>
+    <div class="tiraImagen">
+        <img onclick="mostrarim1()" class="imgpeque" src="img/IMG_20200318_095142.jpg" alt="">
+        <img onclick="mostrarimg2()" class="imgpeque" src="img/IMG_20200119_182548.jpg" alt="">
+        <img onclick="mostrarimg3()" class="imgpeque" src="img/IMG_20200212_194842.jpg" alt="">
+        <img onclick="mostrarimg4()" class="imgpeque" src="img/IMG_20200212_192655.jpg" alt="">
+    </div>
+</body>
+<script>
+    document.getElementById("img2").style.display="block"
+    
+    //las siguientes funciones sirvieron para mostrar cada una de las fotos de la parte de arriba en el navegador//
+    function mostrarim1(){
+        document.getElementById("img1").style.display="block"
+        document.getElementById("img2").style.display="none"
+        document.getElementById("img3").style.display="none"
+        document.getElementById("img4").style.display="none"
+    }
+    function mostrarimg2(){
+        document.getElementById("img1").style.display="none"
+        document.getElementById("img2").style.display="block"
+        document.getElementById("img3").style.display="none"
+        document.getElementById("img4").style.display="none"
+    }
+    function mostrarimg3(){
+        document.getElementById("img1").style.display="none"
+        document.getElementById("img2").style.display="none"
+        document.getElementById("img3").style.display="block"
+        document.getElementById("img4").style.display="none"
+    }
+    function mostrarimg4(){
+        document.getElementById("img1").style.display="none"
+        document.getElementById("img2").style.display="none"
+        document.getElementById("img3").style.display="none"
+        document.getElementById("img4").style.display="block"
+    }
+</script>
+</html>
