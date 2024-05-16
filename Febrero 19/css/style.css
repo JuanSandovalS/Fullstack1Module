@@ -1,0 +1,14 @@
+
+.Colorverde{
+    color: green;
+}
+
+.CentrarImagen{
+    width: 40%; /*ANCHO*/
+    display: block; /*ESTABLECE QUE EL ELEMENTO OCUPE TODA LA PANTALLA*/
+    margin: 0 auto;/*NOS PERMITE COLOCAR LA DISTANCIA*/
+}
+
+.Colorazul{
+    color: darkblue;
+}
