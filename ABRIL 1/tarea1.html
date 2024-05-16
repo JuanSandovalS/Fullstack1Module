@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Tarifa de Examen de Admisión</title>
+</head>
+<body>
+    <h1>Examen de Admisión</h1>
+    <label for="Colegio">Tipo de Colegio (N para Nacional / P para Particular):</label>
+    <input type="text" id="Colegio" placeholder="N/P" maxlength="1"> <br>
+    <label for="Nivel">Nivel Socioeconómico (A/B/C):</label>
+    <input type="text" id="Nivel" placeholder="A/B/C" maxlength="1"> <br>
+    <button onclick="calcularMonto()">Calcular Monto</button>
+    <h3 id="montoTotal"></h3>
+    <script>
+        function calcularMonto(){
+            var colegioIngresado = document.getElementById('Colegio').value.toUpperCase();
+            var nivelIngresado = document.getElementById('Nivel').value.toUpperCase();
+            var tarifas = {
+                'N': {'A': 300, 'B': 200, 'C': 100},
+                'P': {'A': 400, 'B': 300, 'C': 200}
+            };
+            var resultado = tarifas[colegioIngresado][nivelIngresado];
+
+            if (resultado) {
+                document.getElementById('montoTotal').innerHTML = "Monto Total: " + resultado;
+            } else {
+                document.getElementById('montoTotal').innerHTML = "Entradas no válidas. Por favor ingrese los datos correctamente.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Estaciones del año</h1>
+    <input id="mes" type="number" placeholder="Ingrese mes del año">
+    <input id="dia" type="number" placeholder="Ingrese dia">
+    <button onclick="identificarEstacion()">Identificar estación</button>
+    <h3 id="estacionPresentar"></h3>
+    <script>
+        function identificarEstacion(){
+            var mesIngresado = parseInt(document.getElementById('mes').value);
+            var diaIngresado = parseInt(document.getElementById('dia').value);
+            switch(mesIngresado){
+                case 1:
+                case 2:
+                case 3:
+                document.getElementById('estacionPresentar').innerHTML = "Es Verano";
+                if(mesIngresado == 3 && diaIngresado > 20){
+                    document.getElementById('estacionPresentar').innerHTML = "Es Otoño";
+                }
+                break;
+                
+                case 4:
+                case 5:
+                case 6:
+                document.getElementById('estacionPresentar').innerHTML = "Es Otoño";
+                if(mesIngresado == 6 && diaIngresado > 21){
+                    document.getElementById('estacionPresentar').innerHTML = "Es Invierno";
+                }
+                break;
+
+                case 7:
+                case 8:
+                case 9:
+                document.getElementById('estacionPresentar').innerHTML = "Es Invierno";
+                if(mesIngresado == 9 && diaIngresado > 22){
+                    document.getElementById('estacionPresentar').innerHTML = "Es Primavera";
+                }
+                break;
+
+                case 10:
+                case 11:
+                case 12:
+                document.getElementById('estacionPresentar').innerHTML = "Es Primavera";
+                if(mesIngresado == 12 && diaIngresado > 20){
+                    document.getElementById('estacionPresentar').innerHTML = "Es Verano";
+                }
+                bre
+                break;
+
+                default:
+                document.getElementById('estacionPresentar').innerHTML = "El mes no es valido";
+                break;
+
+            }
+        }
+    </script>
+</body>
+</html>

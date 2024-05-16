@@ -1,0 +1,41 @@
+.tituloprincipal {
+    color: red;            /* Letra roja */
+    background-color: yellow; /* Color de fondo amarillo */
+    font-family: Arial, sans-serif; /* Fuente Arial */
+  }
+  
+  p {
+    color: blue;       /* Letra azul */
+    font-size: 30px;   /* Tamaño de fuente 30px */
+  }
+  
+  button {
+   background-color: grey; 
+    border: none;             
+    color: white;           
+    padding: 10px 20px;   
+    text-align: center;        
+    text-decoration: none;    
+    display: inline-block;    
+    font-size: 16px;          
+    margin: 4px 2px;           
+    cursor: pointer;          
+    border-radius: 5px;       
+  }
+  
+  a {
+    color: black;             
+    background-color: green; 
+    padding: 5px 10px;        
+    text-decoration: none;    
+    display: inline-block;    
+    margin: 4px 2px;          
+    border-radius: 5px;        
+    transition: 0.3s;          
+  }
+  
+  a:hover {
+    background-color: greenyellow;   
+    text-decoration: underline; 
+  }
+  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Elementos desde JS</title>
+</head>
+<body>
+    <h1>Creación de elementos desde JS</h1>
+    <h3>¿Cuántos elementos desea crear?</h3>
+    <input type="number" id="cantidadElementos" placeholder="Ingrese la cantidad de títulos">
+    <button onclick="crearElemento()">Crear</button>
+    <div id="padreNuevasEtiquetas"></div>
+    <script>
+        function crearElemento() {
+            var cantidad = parseInt(document.getElementById('cantidadElementos').value, 10); // Ensure we parse the number as base 10
+            var padre = document.getElementById('padreNuevasEtiquetas');
+
+            // Remove all existing children from padre
+            while (padre.firstChild) {
+                padre.removeChild(padre.firstChild);
+            }
+
+            for (var contador = 0; contador < cantidad; contador++) {
+                // Create and append a new title
+                var nuevoTitulo = document.createElement('h1');
+                nuevoTitulo.textContent = 'Texto ejemplo'; // Use textContent instead of innerHTML when setting text
+                padre.appendChild(nuevoTitulo);
+
+                // Create and append a new paragraph
+                var nuevoParrafo = document.createElement('p');
+                nuevoParrafo.textContent = 'Este es un párrafo creado desde JavaScript';
+                padre.appendChild(nuevoParrafo);
+
+                // Create and append a new "Ver más" link
+                var etiquetaA = document.createElement('a');
+                etiquetaA.textContent = 'Ver más';
+                etiquetaA.href = '#'; // Placeholder href, '#' will prevent navigation
+                etiquetaA.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default anchor click behavior
+                    // Here you can add any functionality you want when 'Ver más' is clicked
+                    console.log('Más información...');
+                });
+                padre.appendChild(etiquetaA);
+            }
+        }
+    </script>
+</body>
+</html>
