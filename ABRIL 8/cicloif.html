@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de Cuenta Estudiante</title>
+</head>
+<body>
+    <h1>Estado de Cuenta del Estudiante</h1>
+    <input type="text" id="nombreEstudiante" placeholder="Nombre del Estudiante" required>
+    <input type="number" id="cantidadMeses" placeholder="Cantidad de meses pagados" min="0" max="10" required>
+    <button onclick="generarListado()">Generar estado de cuenta</button>
+    <ul id="estadoCuenta"></ul>
+
+    <script>
+        function generarListado() {
+            const nombreEstudiante = document.getElementById('nombreEstudiante').value;
+            const mesesPagados = parseInt(document.getElementById('cantidadMeses').value);
+            const totalMeses = 10;
+            const pagoMensual = 425;
+            const estadoCuentaUl = document.getElementById('estadoCuenta');
+            estadoCuentaUl.innerHTML = '';
+            
+            let saldo = 4250;
+
+            if (mesesPagados >= totalMeses) {
+                const li = document.createElement('li');
+                li.textContent = `¡Ya has pagado todo! No debes nada.`;
+                estadoCuentaUl.appendChild(li);
+            } else {
+                for (let i = 1; i <= totalMeses; i++) {
+                    if (i <= mesesPagados) {
+                        saldo -= pagoMensual;
+                    } else {
+                        const li = document.createElement('li');
+                        li.textContent = `Mes ${i}: Pendiente de pago. Saldo restante: 
+                        ${saldo.toFixed(2)}.`;
+                        estadoCuentaUl.appendChild(li);
+                    }
+                }
+            }
+
+            const liNombre = document.createElement('li'); 
+            estadoCuentaUl.insertBefore(liNombre, estadoCuentaUl.firstChild);
+        }
+    </script>
+</body>
+</html>

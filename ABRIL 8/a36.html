@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyección de Pago para Automóvil</title>
+</head>
+<body>
+
+<h2>Proyección de Pago para Automóvil</h2>
+
+<form id="car-form">
+  <label for="car-price">Precio del Vehículo:</label>
+  <input type="number" id="car-price" required><br><br>
+  
+  <label for="insurance">Seguro:</label>
+  <select id="insurance" required>
+    <option value="el-roble">El Roble</option>
+    <option value="gt">G&T</option>
+  </select><br><br>
+  
+  <label for="duration">Duración del Préstamo:</label>
+  <select id="duration" required>
+    <option value="12">12 meses</option>
+    <option value="24">24 meses</option>
+    <option value="36">36 meses</option>
+  </select><br><br>
+  
+  <button type="submit">Calcular</button>
+</form>
+
+<div id="payment-schedule"></div>
+
+<script>
+document.getElementById('car-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  var carPrice = parseFloat(document.getElementById('car-price').value);
+  var insurance = document.getElementById('insurance').value;
+  var duration = parseInt(document.getElementById('duration').value);
+  
+  var monthlyPayment = carPrice / duration;
+  
+  if (insurance === 'el-roble') {
+    monthlyPayment += 500;
+  } else if (insurance === 'gt') {
+    monthlyPayment += 650;
+  }
+  
+  var scheduleHTML = '<h3>Proyección de Pagos</h3>';
+  
+  scheduleHTML += '<p><strong>Precio del Vehículo:</strong> Q' + carPrice.toFixed(2) + '</p>';
+  scheduleHTML += '<p><strong>Seguro:</strong> ' + (insurance === 'el-roble' ? 'El Roble' : 'G&T') + '</p>';
+  scheduleHTML += '<p><strong>Duración del Préstamo:</strong> ' + duration + ' meses</p>';
+  
+  for (var i = 1; i <= duration; i++) {
+    scheduleHTML += '<p>Mes ' + i + ': Cantidad Q' + monthlyPayment.toFixed(2) + '</p>';
+  }
+  
+  document.getElementById('payment-schedule').innerHTML = scheduleHTML;
+});
+</script>
+
+</body>
+</html>
