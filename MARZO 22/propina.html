@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/if.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de Propina</h1>
+     <form>
+        <label for="servicio">Calidad del Servicio:</label>
+        <select id="servicio">
+            <option value="excelente">Excelente (20% de propina)</option>
+            <option value="bueno">Bueno (15% de propina)</option>
+            <option value="regular" selected>Regular (10% de propina)</option>
+        </select>
+        <br>
+        <label for="monto">Ingresa el monto consumido:</label>
+        <input type="number" id="monto" placeholder="Ingresa monto consumido">
+        <br><br>
+        <a href="#" class="boton" onclick="calcularPropina()">Calcular Propina</a>
+        <p id="mensajePropina"></p>
+     </form>
+<script>
+  function calcularPropina() {
+        var calidadServicio = document.getElementById('servicio').value;
+        var montoConsumido = parseFloat(document.getElementById('monto').value);
+        var porcentajePropina = 0;
+    
+        if (calidadServicio == 'excelente') {
+            porcentajePropina = 0.2;
+        } else if (calidadServicio == 'bueno') {
+            porcentajePropina = 0.15;
+        } else if (calidadServicio == 'regular') {
+            porcentajePropina = 0.1;
+        }
+    
+        var propina = montoConsumido * porcentajePropina;
+    
+        document.getElementById('mensajePropina').innerHTML = 'La propina a dejar es: ' + propina.toFixed(2);
+    }
+</script>
+  
+    
+</body>
+</html>

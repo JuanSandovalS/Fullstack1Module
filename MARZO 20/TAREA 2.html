@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descuentos para Clientes</title>
+    <link rel="stylesheet" href="css/tarea2.css">
+</head>
+<body>
+    <div id="formulario">
+        <h2>Calculadora de Descuentos</h2>
+        <p>Ingrese G para Cliente General o A para Cliente Afiliado:</p>
+        <input type="text" id="tipoCliente" placeholder="G/A">
+        <button onclick="mostrarDescuento()">Calcular Descuento</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function mostrarDescuento() {
+            var tipoCliente = document.getElementById('tipoCliente').value.toUpperCase();
+            var resultado = document.getElementById('resultado');
+
+            if(tipoCliente === 'G') {
+                resultado.innerHTML = 'El cliente tiene un 5% de descuento.';
+            } else if(tipoCliente === 'A') {
+                resultado.innerHTML = 'El cliente tiene un 10% de descuento.';
+            } else {
+                resultado.innerHTML = 'Tipo de cliente no válido. Ingrese G o A.';
+            }
+        }
+    </script>
+</body>
+</html>

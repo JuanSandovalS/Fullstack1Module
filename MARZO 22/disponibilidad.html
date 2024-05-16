@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/if.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Disponibilidad de stock antes de comprar un producto</h1>
+
+
+    <form> 
+        <input id="unidadesDisp" type="number" placeholder="Disponibilidad"><br>
+        <input id="cantCompra" type="number" placeholder="Cantidad Compra"><br>
+        <a href="#"class="boton" onclick="determinarStock()">Validar</a>
+        <h3 id="resultadoDescuento"></h3>
+
+    </form> 
+    <script>
+        function determinarStock(){
+            var stockDisponible = parseInt(document.getElementById('unidadesDisp').value)
+            var cantcompra = parseInt(document.getElementById('cantCompra').value)
+            if (cantcompra <= stockDisponible){
+                stockDisponible -= cantcompra;
+                document.getElementById('resultadoDescuento').innerHTML = "Compra realizada. Stock restante: " + stockDisponible
+            }
+            else{
+                document.getElementById('resultadoDescuento').innerHTML = "Lo sentimos, no hay suficiente stock para completar tu compra."
+            }
+        }
+    </script>
+</body>
+</html>

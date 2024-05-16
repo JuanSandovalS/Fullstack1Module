@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h1>calculo de temperatura</h1>
+    <input type="number" name="" id="temperatura">
+    <br>
+    <a href="#" onclick="determinartemperatura()">Calcular</a>
+    <h2 id="estadodetemperatura"></h2>
+    <script>
+        function determinartemperatura(){
+            var temperatura = document.getElementById('temperatura').value 
+            if (temperatura<=10){
+                document.getElementById("estadodetemperatura").style.color = "blue";
+                document.getElementById("estadodetemperatura").innerHTML = "frio";
+            }
+            else if (temperatura>=11&& temperatura<=20){
+                document.getElementById("estadodetemperatura").style.color = "skyblue";
+                document.getElementById("estadodetemperatura").innerHTML = "nublado";
+            }
+            else if (temperatura>=21&& temperatura<=30){
+                document.getElementById("estadodetemperatura").style.color = "orange";
+                document.getElementById("estadodetemperatura").innerHTML = "calor";
+            }
+            else {
+                document.getElementById("estadodetemperatura").style.color = "red";
+                document.getElementById("estadodetemperatura").innerHTML = "tropical";
+            }
+        }
+    </script>
+    
+</body>
+</html>

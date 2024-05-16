@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 15px; /* Aumenta el espacio entre los botones */
+    border: 2px solid #179e3d; /* Delineado en verde oscuro */
+    border-radius: 5px;
+    color: white;
+    background-color: #20bc4e;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #179e3d;
+    border-color: #0f7a29; /* Delineado más oscuro al pasar el ratón */
+}
+
+.btn:focus {
+    outline: none;
+}

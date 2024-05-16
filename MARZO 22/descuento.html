@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/if.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>descuento clientes</h1>
+    
+    <form>
+        <select id="menudescuentocliente">
+            <option value="G">General</option>
+            <option value="A">Afiliado</option>
+        </select>
+        <br>
+        <input id="pago" type="number" placeholder="total a pagar"><br>
+        <br>
+        <a href="#" class="boton" onclick="calculardescuento()">Validar</a>
+        <h3 id="resultadodescuento"></h3>
+    
+    </form>
+
+
+    <script>
+        function calculardescuento(){
+            var selecioncliente = document.getElementById('menudescuentocliente').value 
+            var pago = parseInt(document.getElementById('pago').value)
+            var descuento = 0
+            var nuevopago = 0
+            if(selecioncliente == 'A'){
+                descuento = pago * 0.15
+                nuevopago = pago - descuento
+            }
+            if(selecioncliente == 'G'){
+                descuento = pago * 0.05
+                nuevopago = pago - descuento 
+            }
+            document.getElementById("resultadodescuento").innerHTML = "compra realizada. tu pago fue: " +  nuevopago
+        }
+    </script>
+</body>
+</html>

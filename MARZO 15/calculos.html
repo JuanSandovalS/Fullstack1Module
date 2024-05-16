@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Triángulo</title>
+</head>
+<body>
+    <h2>CÁLCULOS TRIÁNGULO</h2>
+    <form id="trianguloForm">
+        <input id="basetriangulo" type="number" placeholder="Ingrese base del triángulo"><br>
+        <input id="alturatriangulo" type="number" placeholder="Ingrese altura del triángulo"><br>
+        <input id="ladotriangulo" type="number" placeholder="Ingrese un lado del triángulo"><br>
+        <button type="button" onclick="area()" style="background-color: #4CAF50; color: white; padding: 10px 15px; margin: 4px 2px; border: none; cursor: pointer;">Calcular Área</button>
+        <button type="button" onclick="perimetro()" style="background-color: #008CBA; color: white; padding: 10px 15px; margin: 4px 2px; border: none; cursor: pointer;">Calcular Perímetro</button>
+    </form>
+    <h2 id="calculararea"></h2>
+    <h2 id="calcularperimetro"></h2>
+
+    <script>
+        function area() {
+            var base = parseInt(document.getElementById("basetriangulo").value);
+            var altura = parseInt(document.getElementById("alturatriangulo").value);
+            var area = (base * altura) / 2;
+            document.getElementById("calculararea").innerHTML = "El área del triángulo es: " + area + " cm²";
+        }
+
+        function perimetro() {
+            var lado = parseInt(document.getElementById("ladotriangulo").value);
+            var perimetro = lado * 3;
+            document.getElementById("calcularperimetro").innerHTML = "El perímetro del triángulo es: " + perimetro + " cm";
+        }
+    </script>
+</body>
+</html>

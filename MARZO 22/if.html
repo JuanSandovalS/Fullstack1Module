@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/if.css">
+    <title>notas</title>
+</head>
+<body>
+    <h1>Estado Académico de Estudiantes</h1>
+
+    <form>
+        <input type="number" id="nota" placeholder="Introduce tu nota">
+        <br>
+        <button type="button" class="boton" onclick="determinaEstadoAcademico()">Calcular</button>
+    </form>
+    <h2 id="estadoAcademico"></h2>
+
+    <script>
+        function determinaEstadoAcademico() {
+            var notaEstudiante = document.getElementById("nota").value;
+            if (notaEstudiante >= 65) {
+                document.getElementById("estadoAcademico").style.color = "green";
+                document.getElementById("estadoAcademico").innerHTML = "Felicidades, aprobaste";
+            } else {
+                document.getElementById("estadoAcademico").style.color = "red";
+                document.getElementById("estadoAcademico").innerHTML = "Lo sentimos, reprobaste";
+            }
+        }
+    </script>
+</body>
+</html>

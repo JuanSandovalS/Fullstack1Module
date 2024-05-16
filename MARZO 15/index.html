@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora HTML </h2>
+        <form id="calculadoraForm">
+            <input id="primerProducto" type="number" placeholder="Ingrese Primer Número" required><br>
+            <input id="segundoProducto" type="number" placeholder="Ingrese Segundo Número" required><br>
+            <input id="tercerProducto" type="number" placeholder="Ingrese Tercer Número" required><br>
+            <input id="cuartoProducto" type="number" placeholder="Ingrese Cuarto Número" required><br>
+            <button type="button" class="btn" onclick="aplicarSuma()">Aplicar Suma</button>
+        <!--- <button type="button" class="btn" onclick="aplicarResta()">Aplicar Resta</button>
+            <button type="button" class="btn" onclick="aplicarMulti()">Aplicar Multiplicación</button>
+            <button type="button" class="btn" onclick="aplicarDiv()">Aplicar División</button>-->
+        </form>
+        <h2 id="resultadoSuma"></h2>
+        <!--<h2 id="resultadoResta"></h2>
+        <h2 id="resultadoMulti"></h2>
+        <h2 id="resultadoDiv"></h2>-->
+    </div>
+
+</body>
+<script>
+    function aplicarSuma(){
+        var primerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var segundoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var tercerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var cuartoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var suma = primerPrecioProducto+segundoPrecioProducto+tercerPrecioProducto+cuartoPrecioProducto
+        document.getElementById("resultadoSuma").innerHTML = "El resultado de la suma es: "+suma
+    } 
+    /*function aplicarResta(){
+        var primerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var segundoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var tercerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var cuartoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var resta = primerPrecioProducto-segundoPrecioProducto-tercerPrecioProducto-cuartoPrecioProducto
+        document.getElementById("resultadoResta").innerHTML = "El resultado de la resta es: "+resta
+    } 
+    function aplicarMulti(){
+        var primerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var segundoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var tercerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var cuartoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var multi = primerPrecioProducto*segundoPrecioProducto*tercerPrecioProducto*cuartoPrecioProducto
+        document.getElementById("resultadoMulti").innerHTML = "El resultado de la mutiplicación es: "+multi
+    } 
+    function aplicarDiv(){
+        var primerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var segundoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var tercerPrecioProducto = parseInt(document.getElementById("primerProducto").value) 
+        var cuartoPrecioProducto = parseInt(document.getElementById("segundoProducto").value) 
+        var div = primerPrecioProducto/segundoPrecioProducto/tercerPrecioProducto/cuartoPrecioProducto
+        document.getElementById("resultadoDiv").innerHTML = "El resultado de la división es: "+ div
+    } */
+</script>
+</html>
