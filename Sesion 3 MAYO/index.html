@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Selecciona una imagen e indica el numero de veces a repetir</h1>
+    <label for="titulo">Titulo: </label>
+    <input type="text" id="titulo"><br><br>
+    <input type="file" id="campoFoto" accept="image/*"><br><br>
+    <label for="parrafoDescrip">Parrafo</label>
+    <textarea name="" id="parrafoDescrip"></textarea><br><br>
+    <label for="campoRepeticiones">Cantidad de veces a repetir</label>
+    <input type="number" id="campoRepeticiones"><br><br>
+    <button onclick="repetirNoticias()">Repetir</button>
+    <div id="imagenesRepetidas"></div>
+    <script>
+        function repetirNoticias (){
+            var cTitulo = document.getElementById('titulo').value;
+            var cParrafo = document.getElementById('parrafoDescrip').value;
+            var cImagen = document.getElementById('campoFoto');
+            var cRepeticiones = document.getElementById('campoRepeticiones').value;
+
+            //=== validan de que el valor que esta en la izquierda sea identico al de la derecha, tanto como en contenido y tipo de dato
+
+            if(cImagen.files.length === 0){
+                alert("Debe seleccionar una imagen.");
+            }
+            var cRepeticionesN = parseInt(cRepeticiones);
+
+            //NaN significa Not a Number
+            if(isNaN(cRepeticionesN) || cRepeticionesN < 1){    
+                alert("Debe de ingresar un numero superior a 0.");
+            }
+            var loteImagenesRepetidas = document.getElementById('imagenesRepetidas');
+            loteImagenesRepetidas.innerHTML = "";
+            //obtener la imagen seleccionada
+            var fotoRepetir = cImagen.files[0];
+            //obtener la URL o la ubicacion de la imagen
+            var ubicacionFoto = URL.createObjectURL(fotoRepetir);
+
+            //procedemos con el ciclo
+            for(var contador = 0; contador < cRepeticionesN; contador++){
+                
+                //Titulo
+                var nuevoTitulo = document.createElement("h2");
+                nuevoTitulo.innerHTML = cTitulo;
+                loteImagenesRepetidas.appendChild(nuevoTitulo);
+
+                //imagen
+                var nuevaImagen = document.createElement("img");
+                nuevaImagen.src= ubicacionFoto;
+                nuevaImagen.style.width = "500px";
+                nuevaImagen.style.display = "block";
+                nuevaImagen.style.margin = "25px"
+                loteImagenesRepetidas.appendChild(nuevaImagen);
+
+                //parrafo
+                var nParrafo = document.createElement("p");
+                var cExtraidos = cParrafo.substring(0, 15 + (contador * 15));
+                nParrafo.textContent = cExtraidos;
+                loteImagenesRepetidas.appendChild(nParrafo);                
+            }
+        }
+    </script>
+</body>
+</html>

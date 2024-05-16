@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Pendientes</title>
+    <style>
+        .completed {
+            background-color: green;
+        }
+        .incomplete {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Pendientes</h1>
+    <ul id="todoList">
+        <li class="incomplete">
+            <input type="checkbox" onclick="toggleComplete(this)">
+            Pagar Impuestos
+        </li>
+        <li class="incomplete">
+            <input type="checkbox" onclick="toggleComplete(this)">
+            Darle de comer al perro
+        </li>
+        <li class="incomplete">
+            <input type="checkbox" onclick="toggleComplete(this)">
+            Ir Gimnasio
+        </li>
+    </ul>
+
+    <script>
+        function toggleComplete(checkbox) {
+            if (checkbox.checked) {
+                checkbox.parentElement.classList.remove('incomplete');
+                checkbox.parentElement.classList.add('completed');
+            } else {
+                checkbox.parentElement.classList.remove('completed');
+                checkbox.parentElement.classList.add('incomplete');
+            }
+        }
+    </script>
+</body>
+</html>

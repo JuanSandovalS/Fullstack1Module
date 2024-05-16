@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyección Auto</title>
+</head>
+<body>
+    <h1>Proyección de Pago</h1>
+    <form id="paymentForm">
+        <label for="payment">Pago (Q): </label>
+        <input type="number" id="payment" name="payment" value="0"><br><br>
+        <input type="checkbox" id="isOld" name="isOld">
+        <label for="isOld">¿Es antiguo?</label><br><br>
+        <button type="button" onclick="calculateTotal()">Calcular Total</button>
+    </form>
+    <h2>Total: Q <span id="total">0.00</span></h2>
+
+    <script>
+        function calculateTotal() {
+            let payment = parseFloat(document.getElementById('payment').value);
+            const isOld = document.getElementById('isOld').checked;
+
+            if (isOld) {
+                payment -= 500.00;
+            }
+
+            document.getElementById('total').innerText = payment.toFixed(2);
+        }
+    </script>
+</body>
+</html>

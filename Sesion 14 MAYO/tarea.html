@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Pagos de Estudiantes</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Tabla de Estudiantes</h1>
+    <input type="text" id="nombre-estudiante" placeholder="Nombre del Estudiante">
+    <button onclick="agregarEstudiante()">Agregar Estudiante</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del Estudiante</th>
+                <th>Enero</th>
+                <th>Febrero</th>
+                <th>Marzo</th>
+                <th>Abril</th>
+                <th>Mayo</th>
+                <th>Junio</th>
+                <th>Julio</th>
+                <th>Agosto</th>
+                <th>Septiembre</th>
+                <th>Octubre</th>
+                <th>Saldo Actual</th>
+            </tr>
+        </thead>
+        <tbody id="students-container"></tbody>
+    </table>
+    <script>
+        // Monto inicial
+        const montoInicial = 5000;
+
+        // Función para agregar un estudiante con 10 checkboxes
+        function agregarEstudiante() {
+            const nombreEstudiante = document.getElementById('nombre-estudiante').value;
+            if (!nombreEstudiante) return; // Evita agregar estudiantes sin nombre
+
+            // Contenedor principal
+            const container = document.getElementById('students-container');
+
+            // Crear una fila para el estudiante
+            const studentRow = document.createElement('tr');
+
+            // Columna del nombre del estudiante
+            const nombreCell = document.createElement('td');
+            nombreCell.textContent = nombreEstudiante;
+            studentRow.appendChild(nombreCell);
+
+            // Crear 10 checkboxes
+            let saldo = montoInicial;
+            for (let i = 0; i < 10; i++) {
+                const checkboxCell = document.createElement('td');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.classList.add('mes');
+
+                // Evento para manejar el cambio en el checkbox
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        saldo -= 500;
+                    } else {
+                        saldo += 500;
+                    }
+                    actualizarSaldo(studentRow, saldo);
+                });
+
+                checkboxCell.appendChild(checkbox);
+                studentRow.appendChild(checkboxCell);
+            }
+            // Columna del saldo actual
+            const saldoCell = document.createElement('td');
+            saldoCell.classList.add('saldo');
+            saldoCell.textContent = saldo;
+            studentRow.appendChild(saldoCell);
+
+            // Agregar la fila del estudiante al contenedor principal
+            container.appendChild(studentRow);
+        }
+        // Función para actualizar y mostrar el saldo restante
+        function actualizarSaldo(row, saldo) {
+            const saldoCell = row.querySelector('.saldo');
+            saldoCell.textContent = saldo;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccion Catetos</title>
+</head>
+<body>
+    <h1>Calculadora de Catetos</h1>
+    <select id="MenuCatetos">
+        <option value="Hipotenusa">Hipotenusa</option>
+        <option value="adyacente"> Adyacente</option>
+    </select>
+    <br>
+
+    <label for="CampoLado">Lado: </label>
+    <input type="number" id="CampoLado"><br>
+    <label for="CampoGrados">Ángulos de visión (Grados): </label>
+    <input type="number" id="CampoGrados"><br>
+    <button onclick="CalcularCatetos()">Calcular</button>
+    <div id="ResultadoCateto"></div>
+
+    <script>
+        function CalcularCatetos(){
+            var opcionCatetos = document.getElementById("MenuCatetos").value
+            var lado = document.getElementById("CampoLado").value
+            var grados = document.getElementById("CampoGrados").value
+            var resultado = document.getElementById("ResultadoCateto")
+            resultado.textContent = ""
+
+            if(opcionCatetos=="Hipotenusa"){
+                var Hipotenusa = Math.round(lado/Math.sin(grados*Math.PI/180)) 
+                var TextoHipotenusa = document.createElement("h2")
+                TextoHipotenusa.textContent = "La hipotenusa es de: " + Hipotenusa + " metros"
+                resultado.appendChild(TextoHipotenusa)
+            }
+            if(opcionCatetos=="adyacente"){
+                var CatOpuesto =Math.round(lado*(Math.tan(grados*Math.PI/180)))
+                var textoCAtetoOp = document.createElement("h2")
+                textoCAtetoOp.textContent ="La Altura aproximada del arbol es de: " + CatOpuesto + " metros."
+                resultado.appendChild(textoCAtetoOp)
+            }
+            else{
+                var TextoInvalido = document.createElement("h2")
+                TextoInvalido.textContent = "Por favor ingrese datos"
+                resultado.appendChild
+            }
+        }
+    </script>
+    
+</body>
+</html>

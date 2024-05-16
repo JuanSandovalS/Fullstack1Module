@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de OnChange</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 20px;
+        }
+        select, input, button {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            width: 100%;
+        }
+        button {
+            background-color: #5c67f2;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4a54e1;
+        }
+        #estructura, #ResultadoCateto {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Uso de OnChange</h2>
+    <select id="funcionOperar" onchange="crearEstructuraHTML()">
+        <option value="T">Calcular triángulo</option>
+        <option value="R">Calcular redondeo</option>
+        <option value="P">Calcular potencia</option>
+    </select>
+
+    <div id="estructura"></div>
+    <div id="ResultadoCateto"></div>
+
+    <script>
+        function crearEstructuraHTML() {
+            var seleccionUsuario = document.getElementById("funcionOperar").value;
+            var estructuraHTML = document.getElementById("estructura");
+            estructuraHTML.innerHTML = "";
+
+            switch (seleccionUsuario) {
+                case "T":
+                    var campoAngulo = document.createElement("input");
+                    campoAngulo.setAttribute("type", "number");
+                    campoAngulo.setAttribute("id", "CampoAngulo");
+                    campoAngulo.setAttribute("placeholder", "Ingrese el ángulo en grados");
+
+                    var campoLado = document.createElement("input");
+                    campoLado.setAttribute("type", "number");
+                    campoLado.setAttribute("id", "CampoLado");
+                    campoLado.setAttribute("placeholder", "Ingrese la longitud del cateto adyacente");
+
+                    var btnCalcular = document.createElement("button");
+                    btnCalcular.setAttribute("onclick", "calcularCatetoOpuesto()");
+                    btnCalcular.textContent = "Calcular Cateto Opuesto";
+
+                    estructuraHTML.appendChild(campoAngulo);
+                    estructuraHTML.appendChild(campoLado);
+                    estructuraHTML.appendChild(btnCalcular);
+                    break;
+                case "R":
+                    var campoNumeroRedondeo = document.createElement("input");
+                    campoNumeroRedondeo.setAttribute("type", "number");
+                    campoNumeroRedondeo.setAttribute("id", "campoNumRedondeo");
+                    campoNumeroRedondeo.setAttribute("placeholder", "Ingrese el número a redondear");
+
+                    var btnRedondeo = document.createElement("button");
+                    btnRedondeo.setAttribute("onclick", "redondeo()");
+                    btnRedondeo.textContent = "Calcular Redondeo";
+
+                    estructuraHTML.appendChild(campoNumeroRedondeo);
+                    estructuraHTML.appendChild(btnRedondeo);
+                    break;
+                case "P":
+                    var basePotencia = document.createElement("input");
+                    basePotencia.setAttribute("type", "number");
+                    basePotencia.setAttribute("id", "basePotencia");
+                    basePotencia.setAttribute("placeholder", "Ingrese la base");
+
+                    var exponentePotencia = document.createElement("input");
+                    exponentePotencia.setAttribute("type", "number");
+                    exponentePotencia.setAttribute("id", "exponentePotencia");
+                    exponentePotencia.setAttribute("placeholder", "Ingrese el exponente");
+
+                    var btnPotencia = document.createElement("button");
+                    btnPotencia.setAttribute("onclick", "potencia()");
+                    btnPotencia.textContent = "Calcular Potencia";
+
+                    estructuraHTML.appendChild(basePotencia);
+                    estructuraHTML.appendChild(exponentePotencia);
+                    estructuraHTML.appendChild(btnPotencia);
+                    break;
+            }
+        }
+
+        function calcularCatetoOpuesto() {
+            var angulo = document.getElementById("CampoAngulo").value;
+            var lado = document.getElementById("CampoLado").value;
+            var resultado = document.getElementById("ResultadoCateto");
+            var catetoOpuesto = lado * Math.tan(angulo * Math.PI / 180);
+            resultado.textContent = "El cateto opuesto es: " + catetoOpuesto.toFixed(2) + " unidades";
+        }
+
+        function redondeo() {
+            var numero = document.getElementById("campoNumRedondeo").value;
+            var resultado = document.getElementById("ResultadoCateto");
+            resultado.textContent = "El número redondeado es: " + Math.round(numero);
+        }
+
+        function potencia() {
+            var base = document.getElementById("basePotencia").value;
+            var exponente = document.getElementById("exponentePotencia").value;
+            var resultado = document.getElementById("ResultadoCateto");
+            resultado.textContent = "El resultado de " + base + " elevado a " + exponente + " es: " + Math.pow(base, exponente);
+        }
+    </script>
+</body>
+</html>

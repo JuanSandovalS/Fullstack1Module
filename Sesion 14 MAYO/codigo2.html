@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Pagos de Estudiantes</title>
+</head>
+<body>
+    <h1>Control de Pagos de Estudiantes</h1>
+    <label for="nombre">Nombre del Estudiante: </label>
+    <input type="text" id="nombre">
+    <button onclick="agregarEstudiante()">Agregar Estudiante</button>
+    <div id="tabla-estudiantes">
+        <h2>Estudiantes</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre del Estudiante</th>
+                    <th>Enero</th>
+                    <th>Febrero</th>
+                    <th>Marzo</th>
+                    <th>Abril</th>
+                    <th>Mayo</th>
+                    <th>Junio</th>
+                    <th>Julio</th>
+                    <th>Agosto</th>
+                    <th>Septiembre</th>
+                    <th>Octubre</th>
+                    <th>Saldo Actual</th>
+                </tr>
+            </thead>
+            <tbody id="contenedor-estudiantes">
+            </tbody>
+        </table>
+    </div>
+    <script>
+                    const saldoInicial = 5000;
+
+            function agregarEstudiante() {
+                const nombre = document.getElementById('nombre').value;
+                if (nombre === '') return;
+
+                const contenedor = document.getElementById('contenedor-estudiantes');
+                const fila = document.createElement('tr');
+
+                const celdaNombre = document.createElement('td');
+                celdaNombre.textContent = nombre;
+                fila.appendChild(celdaNombre);
+
+                let saldo = saldoInicial;
+                for (let i = 0; i < 10; i++) {
+                    const celdaCheckbox = document.createElement('td');
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+
+                    checkbox.onchange = function() {
+                        saldo = checkbox.checked ? saldo - 500 : saldo + 500;
+                        actualizarSaldo(celdaSaldo, saldo);
+                    };
+
+                    celdaCheckbox.appendChild(checkbox);
+                    fila.appendChild(celdaCheckbox);
+                }
+
+                const celdaSaldo = document.createElement('td');
+                celdaSaldo.textContent = saldo;
+                fila.appendChild(celdaSaldo);
+
+                contenedor.appendChild(fila);
+            }
+
+            function actualizarSaldo(celda, saldo) {
+                celda.textContent = saldo;
+            }
+
+    </script>
+</body>
+</html>
