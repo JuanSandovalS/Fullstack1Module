@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Juego de Dado</title>
+
+</head>
+<body>
+<h1>Juego de Adivinar el Dado</h1>
+<p>Adivina el número (entre 1 y 6):</p>
+<input type="number" id="valorElegido" min="1" max="6">
+<button onclick="tirarDado()">Tirar el dado</button>
+
+<script>
+    function tirarDado() {
+        var valorElegido = parseInt(document.getElementById('valorElegido').value);
+        var carasDado = 6;
+        var resultadoDado = parseInt(Math.random() * carasDado) + 1;
+        
+        alert('Valor del dado: ' + resultadoDado);
+    
+        if (valorElegido === resultadoDado) {
+            alert('Acertaste!');
+        } else {
+            alert('No acertaste');
+        }
+    }
+    </script>
+</body>
+</html>

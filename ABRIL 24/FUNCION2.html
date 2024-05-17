@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcular Potencia con Exponentes Negativos</title>
+<script>
+function calcularPotencia2() {
+    var base = document.getElementById('base2').value;
+    var exponente = document.getElementById('exponente2').value;
+    document.getElementById('resultado2').textContent = 'Resultado: ' + potencia2(base, exponente);
+}
+
+function potencia2(base, exponente) {
+    if (exponente === 0) {
+        return 1;
+    } else if (exponente < 0) {
+        return 1 / potencia2(base, -exponente);
+    } else {
+        var resultado = 1;
+        for (var i = 0; i < exponente; i++) {
+            resultado *= base;
+        }
+        return resultado;
+    }
+}
+</script>
+</head>
+<body>
+<h1>Calcular Potencia con Exponentes Negativos</h1>
+Base: <input type="number" id="base2">
+Exponente: <input type="number" id="exponente2">
+<button onclick="calcularPotencia2()">Calcular</button>
+<p id="resultado2"></p>
+</body>
+</html>

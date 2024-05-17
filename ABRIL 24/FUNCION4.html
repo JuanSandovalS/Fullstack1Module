@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora de Potencia y Raíz Cuadrada</title>
+<script>
+function calcularPotencia() {
+    var base = document.getElementById('base-pow').value;
+    var exponente = document.getElementById('exponente').value;
+    var resultado = Math.pow(base, exponente);
+    document.getElementById('resultado-potencia').textContent = 'Resultado: ' + resultado;
+}
+
+function calcularRaizCuadrada() {
+    var numero = document.getElementById('numero-sqrt').value;
+    var resultado = Math.sqrt(numero);
+    document.getElementById('resultado-raiz').textContent = 'Resultado: ' + resultado;
+}
+</script>
+</head>
+<body>
+<h1>Calculadora de Potencia y Raíz Cuadrada</h1>
+
+<div>
+    <h2>Calcular Potencia</h2>
+    Base: <input type="number" id="base-pow">
+    Exponente: <input type="number" id="exponente">
+    <button onclick="calcularPotencia()">Calcular Potencia</button>
+    <p id="resultado-potencia"></p>
+</div>
+
+<div>
+    <h2>Calcular Raíz Cuadrada</h2>
+    Número: <input type="number" id="numero-sqrt">
+    <button onclick="calcularRaizCuadrada()">Calcular Raíz Cuadrada</button>
+    <p id="resultado-raiz"></p>
+</div>
+
+</body>
+</html>

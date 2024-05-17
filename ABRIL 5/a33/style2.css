@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+
+  #sumForm {
+    max-width: 300px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #sumForm label,
+  #sumForm input,
+  #sumForm button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #sumForm input {
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  #sumForm button {
+    background: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  #sumForm button:hover {
+    background: #4cae4c;
+  }
+
+  #results {
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  #resultEven, #resultOdd {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

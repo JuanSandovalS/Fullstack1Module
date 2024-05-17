@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Funciones Seno y Coseno</title>
+
+</head>
+<body>
+<h1>Funciones Seno y Coseno</h1>
+
+<div>
+    <h2>Calcular Seno</h2>
+    Tiempo: <input type="number" id="tiempo" step="0.1">
+    <button onclick="mostrarSeno()">Calcular Seno</button>
+    <p id="resultadoSeno"></p>
+</div>
+
+<div>
+    <h2>Calcular Coseno</h2>
+    X: <input type="number" id="x" step="0.1">
+    <button onclick="mostrarCoseno()">Calcular Coseno</button>
+    <p id="resultadoCoseno"></p>
+</div>
+<script>
+    // Declaración de variables
+    var periodo = 0;
+    var amplitud = 50;
+    var sobre_eje_y = 200; 
+    var sobre_eje_x = 400;
+    function seno(tiempo) {
+        periodo += 0.1;
+        return [tiempo, (Math.sin(periodo) * amplitud) + sobre_eje_y];
+    }
+    function coseno(x) {
+        periodo += 0.01;
+        return [(Math.cos(periodo) * amplitud) + sobre_eje_x, x];
+    }
+    // Funciones para mostrar los resultados en la página
+    function mostrarSeno() {
+        var tiempo = parseFloat(document.getElementById('tiempo').value);
+        var resultado = seno(tiempo);
+        document.getElementById('resultadoSeno').textContent = 'Seno: ' + resultado;
+    }
+    function mostrarCoseno() {
+        var x = parseFloat(document.getElementById('x').value);
+        var resultado = coseno(x);
+        document.getElementById('resultadoCoseno').textContent = 'Coseno: ' + resultado;
+    }
+    </script>
+</body>
+</html>

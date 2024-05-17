@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contador de Múltiplos de 5</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>Contador de Múltiplos de 5</h1>
+  <form id="countForm">
+    <input type="number" id="numberInput" placeholder="Introduce un número" required>
+    <button type="submit">Calcular</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('countForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let totalMultiples = Array.from({ length: document.getElementById('numberInput').value }, (_, index) => index + 1)
+                                  .filter(num => num % 5 === 0)
+                                  .length;
+        document.getElementById('result').textContent = 'Cantidad: ' + totalMultiples;
+      });
+    });
+    </script>
+</body>
+</html>

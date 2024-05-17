@@ -1,0 +1,58 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.contenido{
+    width: 30%;
+    display: block;
+    margin: 0 auto;  
+    text-align: center;
+}
+
+.contenido h1{
+    margin-top: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    text-shadow: 1px 1px 1px #20732f;
+    color: #4d4b4b;
+}
+
+.estiloInput {
+    width: 50%;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px #4d4b4b;
+    padding: 15px 10px;
+    background-color: skyblue;
+}
+
+.btn{
+    width: 60%;
+    margin-top: 25px;
+    background-color: #20bc4e;
+    color: #fff;
+    text-shadow: 1px 1px 1px #090909;
+    padding: 15px 55px;  
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 8px 0 0 #20732f, 0 5px 5px #4d4b4b;
+}
+
+.btn:hover{
+    background-color: #48bb77;
+}
+
+.textoParrafo {
+    color: #090909;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #20732f;
+    margin: 25px 25px;
+
+}

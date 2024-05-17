@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tabla de Multiplicar Dinámica</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>A32: TABLAS MULTIPLICAR</h2> 
+
+<label for="numero">Indique la tabla:</label>
+<input type="number" id="numero" value="5">
+<button onclick="crearTabla()">Crear tabla</button>
+
+<div id="resultado"></div>
+
+<script>
+    function crearTabla() {
+      var numero = document.getElementById("numero").value;
+      var resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = ""; // Limpiar resultados anteriores
+    
+      var texto = '';
+      for(var i = 1; i <= 10; i++) {
+        texto += numero + ' * ' + i + ' = ' + (numero * i) + '<br>';
+      }
+    
+      resultadoDiv.innerHTML = texto;
+    }
+    </script>
+
+</body>
+</html>

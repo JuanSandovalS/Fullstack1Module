@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Vehículos</title>
+</head>
+<body>
+    <div id="listadoVehiculos"></div>
+    <script>
+        function identificarVehiculo(){
+            var listadoVehiculos = document.getElementById("listadoVehiculos");
+            var precioLimite = 40000;
+
+            for(var indice=0; indice<arguments.length; indice++){
+                var vehiculo = arguments[indice];
+                var indiceSeparador = vehiculo.indexOf(":");
+                
+                if(indiceSeparador != -1){
+                    var marcaVehiculo = vehiculo.substring(0, indiceSeparador).trim();
+                    var precioVehiculo = parseInt(vehiculo.substring(indiceSeparador + 1).trim());
+                    
+                    var textVehiculo = document.createElement("h2");
+                    textVehiculo.innerHTML = marcaVehiculo + ": $" + precioVehiculo;
+                    textVehiculo.style.color = precioVehiculo > precioLimite ? "red" : "green";
+                    listadoVehiculos.appendChild(textVehiculo);
+                }
+            }
+        }
+        identificarVehiculo("Toyota:45000", "Honda:35000", "Ford:30000", "Fiat:25000", "Nissan:60000");
+    </script>
+</body>
+</html>

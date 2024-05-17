@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .tabla-multiplicar {
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  .tabla-multiplicar, .tabla-multiplicar th, .tabla-multiplicar td {
+    border: 1px solid #333;
+  }
+  .tabla-multiplicar th, .tabla-multiplicar td {
+    padding: 5px 10px;
+    text-align: left;
+  }
+  .tabla-multiplicar th {
+    background-color: #f2f2f2;
+  }
+  input, button {
+    margin-top: 10px;
+    padding: 5px 10px;
+  }
+  button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }

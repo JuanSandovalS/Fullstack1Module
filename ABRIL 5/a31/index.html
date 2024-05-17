@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contenido">
+    <h1>Enlistar Números</h1>
+    <input id="numeroInicial" type="number" placeholder="Número Inicial" class="estiloInput"><br>
+    <input id="numeroFinal" type="number" placeholder="Número Final" class="estiloInput"><br>
+    <button onclick="crearNumeros()" class="btn">Enlistar Números</button><br>
+    <div id="padreNumeros"></div>
+    <script>
+        function crearNumeros(){
+            var Responsable_Numeros = document.getElementById('padreNumeros');
+            var inicioNumero = parseInt (document.getElementById('numeroInicial').value);
+            var finalNumero = parseInt (document.getElementById('numeroFinal').value);
+
+            while (Responsable_Numeros.firstChild) {
+            Responsable_Numeros.removeChild(Responsable_Numeros.firstChild);
+            }
+
+            for (var contador = inicioNumero; contador <= finalNumero; contador++){
+                var numeroParrafo = document.createElement("p");
+                numeroParrafo.innerHTML = contador;
+                numeroParrafo.setAttribute("class","textoParrafo")
+                Responsable_Numeros.appendChild(numeroParrafo);
+            }
+        }
+    </script>
+</body>
+</html>

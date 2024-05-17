@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="listadoNotas"></div>
+    
+    <script>
+        function identificaCursoAprovado(){
+            var listaCursos = document.getElementById("listadoNotas")
+            const notaAprovacion = 60
+
+            for(var indice=0; indice<arguments.length;indice++){
+                var curso = arguments[indice]
+                var indiceSeparador=curso.indexOf(":") //Estos dos puntos nos ayudaran a separar el nombre del curso y su correspondiente nota
+                //indexOf es una funcion nativa de JavaScrip, devolvera -1 cuando no encuentre nada.
+
+                if(indiceSeparador!=-1){
+                    var nombreCurso = curso.substring(0, indiceSeparador).trim() //desde la primera letra hasta el indice separador corresponde al nombre del curso.
+                    //substring nos permite extraer texto
+                    var notaCurso = parseInt(curso.substring(indiceSeparador + 1).trim()) //a partir de los dos puntos hacia la derecha sera la nota asignada al curso.
+                    if(notaCurso>=notaAprovacion){
+                        var textCurso = document.createElement("h2")
+                        textCurso.innerHTML = nombreCurso + ": " + notaCurso
+                        textCurso.style.color = "green"
+                        listaCursos.appendChild(textCurso)
+                    }else{
+                        var textCurso = document.createElement("h2")
+                        textCurso.innerHTML = nombreCurso + ": " + notaCurso
+                        textCurso.style.color = "red"
+                        listaCursos.appendChild(textCurso)
+                    }
+                }
+            }
+        }
+
+        identificaCursoAprovado("Ingles:65", "Matematicas:70", "Mantenimiento de sistemas: 40")
+    </script>
+</body>
+</html>

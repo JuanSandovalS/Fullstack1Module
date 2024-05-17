@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Pares e Impares</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <h1>Suma de Números Pares e Impares hasta N</h1>
+    <form id="sumForm">
+    <label for="numberInput">Introduce un número (n):</label>
+    <input type="number" id="numberInput" placeholder="Número" required>
+    <button type="submit">Calcular Sumas</button>
+    </form>
+    <p id="resultEven"></p>
+    <p id="resultOdd"></p>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('sumForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        var n = parseInt(document.getElementById('numberInput').value, 10);
+        var sumEven = 0;
+        var sumOdd = 0;
+        
+        for (var i = 1; i <= n; i++) {
+          if (i % 2 === 0) {
+            sumEven += i;
+          } else {
+            sumOdd += i;
+          }
+        }
+        
+        document.getElementById('resultEven').textContent = 'Total Suma Pares: ' + sumEven;
+        document.getElementById('resultOdd').textContent = 'Total Suma Impares: ' + sumOdd;
+      });
+    });
+  </script>
+
+</body>
+</html>

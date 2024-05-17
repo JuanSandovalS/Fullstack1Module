@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcular Potencia</title>
+<script>
+function calcularPotencia() {
+    var base = document.getElementById('base').value;
+    var exponente = document.getElementById('exponente').value;
+    var resultado = 1;
+    for (var i = 0; i < exponente; i++) {
+        resultado *= base;
+    }
+    document.getElementById('resultado').textContent = 'Resultado: ' + resultado;
+}
+</script>
+</head>
+<body>
+<h1>Calcular Potencia</h1>
+Base: <input type="number" id="base">
+Exponente: <input type="number" id="exponente">
+<button onclick="calcularPotencia()">Calcular</button>
+<p id="resultado"></p>
+</body>
+</html>
